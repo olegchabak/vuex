@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		message: 'hello vuex!'
+		message: ''
 	},
 	mutations: {
 		setMessage(state, payload) {
@@ -13,10 +13,9 @@ export default new Vuex.Store({
 		}
 	},
 	actions: {
-		setMessage({commit}) { // можно передать и getters
+		setMessage({commit}, payload) { // можно передать и getters
 			// let a = getters.getMessage;
-			let data = setTimeout(()=>'another text', 1000) // like API
-			commit('setMessage', data)
+			commit('setMessage', payload)
 		}
 	},
 	getters: {
